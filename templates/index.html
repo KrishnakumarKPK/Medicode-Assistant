@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Coding Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical Coding Assistant</h1>
+            <p class="subtitle">Rule-Based ICD-10 & CPT Code Lookup</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <form id="diagnosisForm">
+                    <div class="form-group">
+                        <label for="diagnosis">Enter Diagnosis Description:</label>
+                        <input 
+                            type="text" 
+                            id="diagnosis" 
+                            placeholder="e.g., patient has diabetes and hypertension" 
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="submit-btn">Get Codes</button>
+                </form>
+            </div>
+
+            <div id="resultsContainer" class="results-container" style="display: none;">
+                <div id="resultsList" class="results-list"></div>
+            </div>
+
+            <div id="messageContainer" class="message-container" style="display: none;">
+                <p id="messageText"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Medical Coding Assistant | Rule-Based System</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
